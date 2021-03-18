@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light">
+    <ul class="nav nav-pills" style="padding-left: 10px">
+        <li class="nav-item">
+            <a class="nav-link
+                <% if (active === "home"){%>
+                    active
+                <%}%>
+                " aria-current="page" href="/home">home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link
+                <% if (active === "about"){%>
+                    active
+                <%}%>
+                " href="/about">about us</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link
+                <% if (active === "contact"){%>
+                    active
+                <%}%>
+                " href="/contact">contact us</a>
+        </li>
+    </ul>
+</nav>

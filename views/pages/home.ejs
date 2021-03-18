@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {pageName: 'Home'}); %>
+<body>
+<%- include('../partials/header', {active: 'home'}); %>
+<div class="justify-content-around d-flex m-3">
+    <button id="btn" class="mx-3">Search</button>
+    <input id="search" class="form-control form-control-lg mx-3" type="text" placeholder="Search" aria-label="Search">
+</div>
+<div id="container" class="d-flex justify-content-around flex-wrap">
+    <% products.forEach(function(product) { %>
+        <%- include('../partials/product-card', {product: product}); %>
+    <% }); %>
+</div>
+<%- include('../partials/footer'); %>
+<script>
+    $("#btn").click(() => {
+        if ($("#search").val()) {
+            $.post("",
+                {
+                    search: $("#search").val()
+                },
+                function (data, status) {
+                    let cards = document.getElementsByClassName("card");
+                    for (let value = 0; value < cards.length; value++) {
+                        console.log(value);
+                        cards[value].style.display = "block";
+                    }
+                    for (let id in data){
+                        document.getElementById(data[id]).style.display = "none";
+                    }
+                }
+            );
+        } else {
+            let cards = document.getElementsByClassName("card");
+            for (let value = 0; value < cards.length; value++) {
+                cards[value].style.display = "block";
+            }
+        }
+    });
+</script>
+</body>
+</html>

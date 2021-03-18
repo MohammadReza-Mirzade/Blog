@@ -1,0 +1,11 @@
+<div id="<%= product.id %>" class="card m-5" style="width: 20rem;">
+    <img src="/image/<%= product.image %>" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title"><%= product.name %></h5>
+        <p>Price: $ <%= product.price %></p>
+        <p>color: <%= product.color %></p>
+        <p>Drivetrain: <%= product.drivetrain %></p>
+        <a href="product/<%= product.id %>" class="btn btn-primary">Buy</a>
+        <span class="ml-5">Rate: <%= product.grade %>/5</span>
+    </div>
+</div>

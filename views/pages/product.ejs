@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', {pageName: product.name}); %>
+<body>
+<%- include("../partials/header", {active: 0}) %>
+
+<div class="container">
+    <div class="card" style="width: 30rem; display: flex; justify-content: center">
+        <img src="/image/<%= product.image %>" class="card-img-top">
+        <div class="card-body">
+            <h2 class="card-title"><%= product.name %></h2>
+            <h5 class="card-text">Price: <%= product.price %></h5>
+            <h5 class="card-text">Color: <%= product.color %></h5>
+            <h5 class="card-text">Drivetrain: <%= product.drivetrain %></h5>
+            <h5 class="card-text">Rate: <%= product.grade %></h5>
+            <br>
+            <h5 class="card-text">Seller's Notes:</h5>
+            <p class="card-text"><%= product.info %></p>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
+</body>
+</html>
